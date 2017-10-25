@@ -1,15 +1,19 @@
+// A / 2 -> Je cree mon component child
+// $ ng g component child
+// Je le rajoute dans parent.component.html
+
 // J'importe Input de Angular Core, c'est un module mis a dispo par angular4
 import { Component, OnInit, Input } from '@angular/core';
 
-// Defini le type d'un objet item(minuscule),
-// grace a une interface/moule Item(majuscule)
+// B / 1 Defini le type d'un objet item(minuscule),
+// B / 1 grace a une interface/moule Item(majuscule)
 interface Item {
   size: string;
   color: string;
   price: number;
 }
 
-// Je declare un tableau avec tout mes objets item(minuscule),
+// B / 2 Je declare un tableau avec tout mes objets item(minuscule),
 const ITEMS = [
   {size: 's', color: 'black', price: 10},
   {size: 'm', color: 'green', price: 20},
@@ -38,14 +42,14 @@ export class ChildComponent implements OnInit {
   items: Item[];
   // Je cree une variable qui va pouvoir contenir une valeur
   // sur laquelle je teste mon filtre
-  // Je rajoute la methode input devant filterSize
+  // E / 2 Je rajoute la methode input devant filterSize
   @Input() filterSize: string;
 
   constructor() { }
 
   ngOnInit() {
-    // this.items fait reference a l'element items que j'ai declare plus haut
-    // Je met this devant car a l'interieure d'une methode de ma class
+    // C / 1 this.items fait reference a l'element items que j'ai declare plus haut
+    // C / 1 Je met this devant car a l'interieure d'une methode de ma class
     this.items = ITEMS;
     // Comme filterSize est maintenant un input
     // je ne defini plus sa valeur dans child

@@ -1,3 +1,7 @@
+// A / 1 -> Je cree mon componnet parent
+// $ ng g component parent
+// Je le rajoute dans app.component.html
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,12 +12,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class ParentComponent implements OnInit {
 
+  // E / 1 Je defini une valeur qui pourra recuperer le filtre selectionne
   selectedSize: string;
 
   constructor() { }
 
   ngOnInit() {
-    // this.selectedSize = 's';
+    // Je n'ai plus besoin de definir selectedSize
+    // Sa valeur est defini par ngModel dans mon template
+    // E / 1 -> this.selectedSize = 's';
   }
 
 }
